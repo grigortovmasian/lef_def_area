@@ -1,10 +1,8 @@
 #ifndef CLEF__H
 #define CLEF__H
 
-
 #include "CDesign.h"
 #include <string>
-
 
 class CLEF {
 public:
@@ -16,7 +14,7 @@ public:
 		m_file_path = path;
 	}
 
-	void parse(CDesing *)const;
+	void parse(CDesign *)const;
 	void detectCell(std::ifstream &, CCell &)const;
 	void detectPin(std::ifstream &, CPin &)const;
 private:

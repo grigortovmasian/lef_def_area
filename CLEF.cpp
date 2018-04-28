@@ -3,7 +3,7 @@
 #include <fstream> 
 
 
-void CLEF::parse(CDesing * desing)const {
+void CLEF::parse(CDesign * desing)const {
 	std::ifstream input(m_file_path);
 	std::string line;
 
@@ -30,7 +30,7 @@ void CLEF::detectCell(std::ifstream & stream, CCell & cell)const {
 	while (stream >> line) {
 		if (line == "PIN" | line == "OBS") {
 			++count;
-			std::cout << "PIN ";
+			//std::cout << "PIN ";
 			CPin newPin;
 			detectPin(stream, newPin);
 			cell.addPin(newPin);
@@ -39,7 +39,7 @@ void CLEF::detectCell(std::ifstream & stream, CCell & cell)const {
 		{
 			if (line == "END") {
 				--count;
-				std::cout << "END\n";
+				//std::cout << "END\n";
 				if (!count)
 					return;
 			}
@@ -50,42 +50,32 @@ void CLEF::detectCell(std::ifstream & stream, CCell & cell)const {
 void CLEF::detectPin(std::ifstream & stream, CPin & pin)const {
 	std::string line;
 	stream >> line;
-
 	double coordinate;
-
 
 	if (line == "LAYER")
 		line = "OBS";
 	pin.setName(line);
 
-	std::cout << line << std::endl;
-
 	while (stream >> line) {
 		if (line == "RECT") {
-			std::cout << "RECT";
 			CRectangle newRectangle;
 			CCoordinate ur;
 			CCoordinate dl;
 			stream >> coordinate;
-			std::cout << coordinate;
 			dl.setX(coordinate);
 			stream >> coordinate;
-			std::cout << coordinate;
 			dl.setY(coordinate);
 			stream >> coordinate;
-			std::cout << coordinate;
 			ur.setX(coordinate);
 			stream >> coordinate;
-			std::cout << coordinate << std::endl;
 			ur.setY(coordinate);
-
 			newRectangle.setDL(dl);
 			newRectangle.setUR(ur);
+			pin.addPolygon(newRectangle);
 		}
 		else
 		{
 			if (line == "END") {
-				std::cout << "END\n";
 				return;
 			}
 		}
