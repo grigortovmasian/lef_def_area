@@ -36,7 +36,8 @@ double CDesign::getAreaByCellName(const std::string &cellName) const {
 		return 0;
 	}
 
-	return m_design[cellIndex].getCellArea();	
+    //return m_design[cellIndex].getCellArea();	
+	return m_design[cellIndex].getCellAreaMultiProc();	
 	
 }
 

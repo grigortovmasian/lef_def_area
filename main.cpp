@@ -26,7 +26,7 @@ int main(int argc, char *argv[]) {
 			}
 		}
 
-		double cellArea=design_ptr1->getAreaByCellName("MDN_FSDPRB_4");
+		double cellArea=design_ptr1->getAreaByCellName("MDN_FSDPQ_4");
 		std::cout<<"Area: "<<cellArea<<std::endl;
 		delete design_ptr1;
 	}

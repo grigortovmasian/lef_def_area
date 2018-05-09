@@ -1,0 +1,43 @@
+4294967295 6
+MACRO MDN_FSDPQ_4
+Pin name: CK area: 0.2212
+
+[ 1624] Child  send value: 0.2212
+[ 1623] Parent  received value: 0.2212
+Current Cell Area: 0.2212
+Pin name: D area: 0.2212
+
+[ 1625] Child  send value: 0.2212
+[ 1623] Parent  received value: 0.2212
+Current Cell Area: 0.4424
+Pin name: Q area: 2.1712
+
+[ 1626] Child  send value: 2.1712
+[ 1623] Parent  received value: 2.1712
+Current Cell Area: 2.6136
+Pin name: SE area: 0.2212
+
+[ 1627] Child  send value: 0.2212
+[ 1623] Parent  received value: 0.2212
+Current Cell Area: 2.8348
+Pin name: SI area: 0.2212
+
+[ 1628] Child  send value: 0.2212
+[ 1623] Parent  received value: 0.2212
+Current Cell Area: 3.056
+Pin name: VDD area: 10.1204
+
+[ 1629] Child  send value: 10.1204
+[ 1623] Parent  received value: 10.1204
+Current Cell Area: 13.1764
+Pin name: VSS area: 10.4859
+
+[ 1630] Child  send value: 10.4859
+[ 1623] Parent  received value: 10.4859
+Current Cell Area: 23.6623
+Pin name: OBS area: 21.4823
+
+[ 1631] Child  send value: 21.4823
+[ 1623] Parent  received value: 21.4823
+Current Cell Area: 45.1446
+Area: 45.1446

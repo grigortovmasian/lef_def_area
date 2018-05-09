@@ -17,8 +17,8 @@ public:
     void showCell() const; 
 	void addPin(CPin &);
 	double getCellArea() const;
-	double getCellAreaProc() const;
-	double getCellAreaProcTest() const;
+	double getCellAreaMultiProc() const;
+	void createProcess(double &,int) const;
 
 private:
 	std::string m_cell_name;
