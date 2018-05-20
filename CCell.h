@@ -1,28 +1,34 @@
-#ifndef CCELL__H
-#define CCELL__H
+#ifndef CCELL_H
+#define CCELL_H
 
-#include "CPin.h"
+#include <iostream>
 #include <string>
-#include<sys/types.h>
-#include<sys/wait.h>
+#include <vector>
+#include <sys/types.h>
+#include <sys/wait.h>
 #include <unistd.h>
+#include "CLayer.h"
 
 class CCell {
+
 public:
 	CCell();
 	~CCell();
-
 	void setName(std::string &);
 	const std::string& getName() const;
-    void showCell() const; 
-	void addPin(CPin &);
+	void addLayer(CLayer & newLayer);
+	CLayer& getLayer(const std::string &);
+	void printNames();
 	double getCellArea() const;
 	double getCellAreaMultiProc() const;
-	void createProcess(double &,int) const;
-
+	double getCellOverlapArea();
+	double getCellOverlapAreaMultiProc();
 private:
+	void createProcess(double &, int) const;
+	void createProcessWithOverlap(CLayer&);
 	std::string m_cell_name;
-	std::vector<CPin> m_pins;
+	std::vector<CLayer> m_layers;
+
 };
 
 #endif

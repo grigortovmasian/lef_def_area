@@ -1,26 +1,28 @@
-#ifndef CPIN__H
-#define CPIN__H
+#ifndef CPIN_H
+#define CPIN_H
 
-#include "CRectangle.h"
+#include <iostream>
 #include <string>
 #include <vector>
-
-
+#include "CRectangle.h"
 
 class CPin {
+
 public:
 	CPin();
-	CPin(const CPin&);
 	~CPin();
-
-    void showPin() const;
 	void setName(std::string &);
+	void setLayerName(const std::string &);
 	void addPolygon(CRectangle &);
-	double getPinArea() const;
-
+	double area() const;
+	double overlapArea();
+	polygon getPolygon();
+	void printNames();
 private:
+	std::string m_layer_name;
 	std::string m_pin_name;
 	std::vector<CRectangle> m_polygons;
+	polygon m_overlap_polygon;
 };
 
 #endif
