@@ -1,0 +1,168 @@
+#----------------------------------------------------------------------------
+# Description	: Cell LEF definitions for ts18ugfsdmp
+#		  (TSMC 018um fsg -StdVt Metal Programable Library)
+# Date		: $Date: 2006/06/08 03:58:23 $
+# Copyright	: 1997-2006 by Virage Logic Corporation
+# Revision	: Version $Revision: 1.18 $
+#----------------------------------------------------------------------------
+
+VERSION 5.4 ;
+NAMESCASESENSITIVE ON ;
+BUSBITCHARS "[]" ;
+DIVIDERCHAR "/" ;
+
+# Placement site definition for this library.
+SITE ts18_dmp
+  CLASS core ;
+  SIZE 2.24 BY 5.6 ;
+END ts18_dmp
+
+
+
+#-----------------------------------------------------------------------
+#      Cell        : MDN_FSDPQ_4
+#      Description : D-Flip Flop w/scan, pos-edge triggered, q-only
+#      Equation    : iq,iqn=ff(clocked_on=CK,next_state=(!SE&D)|(SE&SI)):Q=iq
+#      Version     : $Revision: 1.18 $
+#      Created     : $Date: 2006/06/08 03:58:23 $
+#
+MACRO MDN_FSDPQ_4
+  CLASS CORE ;
+  FOREIGN MDN_FSDPQ_4 0 0 ;
+  ORIGIN 0 0 ;
+  SIZE 22.4 BY 5.6 ;
+  SYMMETRY  X ;
+  SITE ts18_dmp ;
+  PIN CK
+    DIRECTION INPUT ;
+    PORT
+      LAYER METAL1 ;
+      RECT  10.5 2.125 10.78 2.915 ;
+    END
+    ANTENNAGATEAREA 0.567 ;
+  END CK
+  PIN D
+    DIRECTION INPUT ;
+    PORT
+      LAYER METAL1 ;
+      RECT  2.66 2.125 2.94 2.915 ;
+    END
+    ANTENNAGATEAREA 0.567 ;
+  END D
+  PIN Q
+    DIRECTION OUTPUT ;
+    PORT
+      LAYER METAL1 ;
+      RECT  17.4 1.565 21.395 1.795 ;
+      RECT  21.165 1.795 21.395 3.245 ;
+      RECT  17.4 3.245 21.395 3.475 ;
+    END
+    ANTENNADIFFAREA 6.048 ;
+  END Q
+  PIN SE
+    DIRECTION INPUT ;
+    PORT
+      LAYER METAL1 ;
+      RECT  1.54 2.125 1.82 2.915 ;
+    END
+    ANTENNAGATEAREA 1.134 ;
+  END SE
+  PIN SI
+    DIRECTION INPUT ;
+    PORT
+      LAYER METAL1 ;
+      RECT  0.42 2.125 0.7 2.915 ;
+    END
+    ANTENNAGATEAREA 0.567 ;
+  END SI
+  PIN VDD
+    DIRECTION INOUT ;
+    USE power ;
+    SHAPE ABUTMENT ;
+    PORT
+      LAYER METAL1 ;
+      RECT  21.165 4.9 21.395 5.46 ;
+      RECT  21.165 5.46 22.57 5.74 ;
+      RECT  18.925 4.9 19.155 5.46 ;
+      RECT  18.925 5.46 19.6 5.74 ;
+      RECT  16.685 4.9 16.915 5.46 ;
+      RECT  16.685 5.46 17.36 5.74 ;
+      RECT  9.91 5.135 10.25 5.46 ;
+      RECT  9.52 5.46 12.435 5.74 ;
+      RECT  12.205 5.0 12.435 5.46 ;
+      RECT  5.485 4.9 5.715 5.46 ;
+      RECT  5.04 5.46 5.715 5.74 ;
+      RECT  1.005 4.87 1.235 5.46 ;
+      RECT  -0.17 5.46 1.235 5.74 ;
+      LAYER METAL2 ;
+      RECT  0.0 5.46 22.4 5.74 ;
+      LAYER VIA12 ;
+      RECT  21.43 5.47 21.69 5.73 ;
+      RECT  21.99 5.47 22.25 5.73 ;
+      RECT  19.19 5.47 19.45 5.73 ;
+      RECT  16.95 5.47 17.21 5.73 ;
+      RECT  9.67 5.47 9.93 5.73 ;
+      RECT  10.23 5.47 10.49 5.73 ;
+      RECT  10.79 5.47 11.05 5.73 ;
+      RECT  11.35 5.47 11.61 5.73 ;
+      RECT  11.91 5.47 12.17 5.73 ;
+      RECT  5.19 5.47 5.45 5.73 ;
+      RECT  0.15 5.47 0.41 5.73 ;
+      RECT  0.71 5.47 0.97 5.73 ;
+    END
+  END VDD
+  PIN VSS
+    DIRECTION INOUT ;
+    USE ground ;
+    SHAPE ABUTMENT ;
+    PORT
+      LAYER METAL1 ;
+      RECT  21.165 -0.14 22.57 0.14 ;
+      RECT  21.165 0.14 21.395 0.7 ;
+      RECT  18.925 -0.14 19.6 0.14 ;
+      RECT  18.925 0.14 19.155 0.7 ;
+      RECT  16.24 -0.14 16.915 0.14 ;
+      RECT  16.685 0.14 16.915 0.7 ;
+      RECT  9.965 -0.14 12.435 0.14 ;
+      RECT  9.965 0.14 10.195 0.73 ;
+      RECT  12.205 0.14 12.435 0.73 ;
+      RECT  5.485 -0.14 6.16 0.14 ;
+      RECT  5.485 0.14 5.715 0.73 ;
+      RECT  3.36 -0.14 4.035 0.14 ;
+      RECT  3.805 0.14 4.035 0.89 ;
+      RECT  3.805 0.89 4.3 1.12 ;
+      RECT  -0.17 -0.14 0.675 0.14 ;
+      RECT  0.445 0.14 0.675 1.005 ;
+      RECT  0.18 1.005 0.675 1.235 ;
+      LAYER METAL2 ;
+      RECT  0.0 -0.14 22.4 0.14 ;
+      LAYER VIA12 ;
+      RECT  21.43 -0.13 21.69 0.13 ;
+      RECT  21.99 -0.13 22.25 0.13 ;
+      RECT  19.19 -0.13 19.45 0.13 ;
+      RECT  16.39 -0.13 16.65 0.13 ;
+      RECT  10.23 -0.13 10.49 0.13 ;
+      RECT  10.79 -0.13 11.05 0.13 ;
+      RECT  11.35 -0.13 11.61 0.13 ;
+      RECT  11.91 -0.13 12.17 0.13 ;
+      RECT  5.75 -0.13 6.01 0.13 ;
+      RECT  3.51 -0.13 3.77 0.13 ;
+      RECT  0.15 -0.13 0.41 0.13 ;
+    END
+  END VSS
+  OBS
+      LAYER METAL1 ;
+      RECT  5.99 0.37 6.33 0.6 ;
+      RECT  6.1 0.6 6.33 0.83 ;
+      RECT  6.1 0.83 9.635 1.005 ;
+      RECT  6.1 1.005 12.435 1.06 ;
+      RECT  14.39 0.37 16.41 0.6 ;
+      RECT  4.745 1.005 5.715 1.01 ;
+      RECT  4.74 1.01 5.715 1.015 ;
+      RECT  4.735 1.015 5.715 1.02 ;
+      RECT  4.73 1.02 5.715 1.025 ;
+      RECT  4.725 1.025 5.715 1.03 ;
+      RECT  1.51 5.0 5.21 5.23 ;
+  END
+END MDN_FSDPQ_4
+
