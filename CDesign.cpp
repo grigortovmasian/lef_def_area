@@ -30,13 +30,3 @@ double CDesign::getAreaByCellName(const std::string &cellName) {
 	return 	m_design[cellIndex].getCellOverlapArea();
 }
 
-double CDesign::getOverlapAreaByCellName(const std::string &cellName)  {
-	int cellIndex = findCell(cellName);
-	double area = 0;
-	if (cellIndex == -1) {
-		std::cout << cellName << " CELL HASN'T FOUND" << std::endl;
-		return 0;
-	}
-
-	return m_design[cellIndex].getCellOverlapArea();
-}
