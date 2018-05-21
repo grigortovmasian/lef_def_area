@@ -15,7 +15,6 @@ public:
 	void printNames();
 	int findCell(const std::string&) const;
 	double getAreaByCellName(const std::string &);
-	double getOverlapAreaByCellName(const std::string &);
 protected:
 	std::vector <CCell> m_design;
 };
